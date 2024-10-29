@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jQuery/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */
+            align-items: center; /* 수직 가운데 정렬 */
+            height: 100vh; /* 전체 화면 높이 */
+            background-color: #f0f0f0; /* 배경색 추가 (선택 사항) */
+        }
+
+        #slider {
+            position: relative;
+            width: 800px;
+            height: 533px;
+            overflow: hidden; /* overflow hidden 추가 */
+        }
+
+        #slider ul {
+            position: relative;
+            width: 100%; /* 전체 폭을 100%로 설정 */
+            transition: left 0.3s; /* 애니메이션 효과 추가 */
+        }
+
+        #slider ul li {
+            float: left;
+            width: 800px;
+            height: 533px;
+        }
+
+        a.prev, a.next {
+            position: absolute;
+            top: 40%;
+            z-index: 999;
+            display: block;
+            padding: 4% 3%;
+            background: #333333;
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        a.prev {
+            left: 0; /* 이전 버튼 왼쪽에 위치 */
+        }
+
+        a.next {
+            right: 0;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            var slideCount = $("#slider ul li").length;
+            var slideWidth = $("#slider ul li").width();
+            var slideHeight = $("#slider ul li").height();
+            var slideTotalWidth = slideCount * slideWidth;
+
+            $("#slider").css({ width: slideWidth, height: slideHeight });
+            $("#slider ul").css({ width: slideTotalWidth, marginLeft: -slideWidth });
+            $("#slider ul li:last-child").prependTo("#slider ul"); // ID 수정
+
+            function moveLeft() {
+                $("#slider ul").animate({
+                    left: +slideWidth
+                }, 300, function() {
+                    $("#slider ul li:last-child").prependTo("#slider ul");
+                    $("#slider ul").css("left", ""); // 초기 위치로 설정
+                });
+            }
+
+            function moveRight() {
+                $("#slider ul").animate({
+                    left: -slideWidth
+                }, 300, function() {
+                    $("#slider ul li:first-child").appendTo("#slider ul"); // 첫 번째 아이템을 마지막으로 이동
+                    $("#slider ul").css("left", ""); // 초기 위치로 설정
+                });
+            }
+
+            $("a.prev").click(function() {
+                moveLeft();
+            });
+            $("a.next").click(function() {
+                moveRight();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <a class="prev"> << </a>
+        <a class="next"> >> </a>
+        <ul>
+            <li><img src="img/image1.jpg" alt="Image 1"></li>
+            <li><img src="img/image2.jpg" alt="Image 2"></li>
+            <li><img src="img/image3.jpg" alt="Image 3"></li>
+        </ul>
+    </div>
+</body>
+</html>

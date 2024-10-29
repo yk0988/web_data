@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jQuery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("nav ul li a:not(:only-child)").click(function(e){
+                $(this).siblings(".nav_dropdown").toggle();
+                $(".nav_dropdown").not($(this).siblings()).hide(); 
+                e.stopPropagation();
+            });
+            $("html").click(function(){
+                $(".nav_dropdown").hide();
+            });
+        });
+    </script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .Anavi {
+            height: 60px;
+            background-color: #333333;
+        }
+
+        .logo {
+            float: left;
+            margin-top: 20px;
+        }
+
+        .logo, .logo a:visited {
+            color: #ffff;
+            text-decoration: none;
+        }
+
+        .navi_container {
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+
+        nav ul li a, ul li a:visited {
+            display: block;
+            padding: 0 20px;
+            line-height: 60px;
+            background: #333333;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover, nav ul li a:visited:hover {
+            background: #27cdef;
+            color: #ffffff;
+        }
+
+        nav ul li .nav_dropdown {
+            position: absolute;
+            display: none;
+            background: #333333;
+            z-index: 1000; /* Ensure dropdown is above other elements */
+        }
+
+        nav ul li .nav_dropdown li a {
+            padding: 15px;
+            line-height: 20px;
+            background: #333333;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li .nav_dropdown li a:hover {
+            background: #27cdef;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+    <section class="Anavi">
+        <div class="navi_container">
+            <div class="logo">
+                <a href="#">로고</a>
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">웹 강좌</a>
+                        <ul class="nav_dropdown">
+                            <li><a href="#">html</a></li>
+                            <li><a href="#">자바</a></li>
+                            <li><a href="#">제이쿼리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <ul class="nav_dropdown">
+                            <li><a href="#">게시판</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">문의하기</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#">이용공지</a>
+                        <ul class="nav_dropdown">
+                            <li><a href="#">게시판</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">문의하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+</body>
+</html>

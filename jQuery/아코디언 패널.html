@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../jQuery/jquery.min.js"></script>
+   
+   <style>
+    a {
+        text-decoration: none;
+    }
+    .accodian {
+        margin: 30px;
+    }
+
+    .accodian dt, .accodian dd {
+        padding: 10px;
+        border: 1px solid #cccccc;
+    }
+
+    .accodian dt:last-of-type, .accodian dd:last-of-type {
+        border-bottom: 1px solid #cccccc;
+    }
+
+    .accodian dt a, .accodian dd a {
+        display: block;
+        color: black;
+        font-weight: bold;
+    }
+
+    .accodian dd {
+        border-top: 0;
+        font-size: 14px;
+        line-height: 150%;
+    }
+   </style>
+   
+   <script>
+        $(document).ready(function() {
+            var allPanels = $(".accodian > dd");
+            allPanels.hide();
+            
+            $(".accodian > dt > a").click(function() {
+                allPanels.slideUp(); // 모든 패널을 닫습니다.
+                $(this).parent().next().slideDown(); // 현재 클릭한 패널을 엽니다.
+                return false; // 링크의 기본 동작을 방지합니다.
+            });
+        });
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+    <dl class="accodian">
+        <dt><a href="#">웹이란?</a></dt>
+        <dd>웹은 www로 표현한다.</dd>
+
+        <dt><a href="#">웹 브라우저</a></dt>
+        <dd>인터넷 익스플로러, 크롬, 사파리, 파이어폭스 등</dd>
+
+        <dt><a href="#">웹 호스팅</a></dt>
+        <dd>인터넷 전문 업체에서 자신이 보유한 웹 서버와 네트워크를 이용하여 개인 또는 기관에게 홈페이지를 구축 가능하도록 사용자 계정과 디스크 공간을 임대해주는 서비스</dd>
+    </dl>
+    
+</body>
+</html>
