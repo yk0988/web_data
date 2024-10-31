@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <p id = "upspeed"></p>
+    <p id = "downspeed"></p>
+
+    <script>
+        let car={
+            name:'sonata',
+            speed:100,
+            color:'white',
+            speedup:function(a){
+                let sp=this.speed+a;
+                if(sp>=300){
+                    sp=50;
+                    return sp;
+               }
+               else{
+                return sp;
+               }
+            },
+            speeddown:function(a){
+                let sp=this.speed-a;
+                if(sp<0){
+                    sp=0;
+                    return sp;
+            }else{
+                return sp;
+                }
+            }
+        };
+
+        let upspeed=document.getElementById("upspeed");
+        upspeed.textContent='속도증가 :' + car.speedup(100);
+        let downspeed=document.getElementById("downspeed");
+        downspeed.textContent='속도감소:'+ car.speeddown(30);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

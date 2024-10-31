@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무명함수 실습</title>
+    <script>
+        // 무명 함수 정의
+        let printMsg = function(msg) {
+            document.write("무명함수: " + msg + "<br>");
+        };
+
+        // 일반 함수 정의
+        function callPrintMsg(msg) {
+            document.write("일반함수: " + msg + "<br>");
+        }
+
+        // 두 함수를 호출하여 출력
+        printMsg("호출되었습니다");
+        callPrintMsg("호출되었습니다");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

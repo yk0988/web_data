@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인자의 개수가 적을 때 처리 방법</title>
+
+    <script>
+        function add(x, y, z) {
+            let sum;
+            if (y === undefined && z === undefined) {
+                sum = x;
+            } else if (z === undefined) {
+                sum = x + y;
+            } else {
+                sum = x + y + z;
+            }
+            return sum;
+        }
+        
+        let r1 = add(2);    // r1은 2
+        let r2 = add(2, 3); // r2는 5
+
+        // 결과를 출력
+        document.write("r1: " + r1 + "<br>");
+        document.write("r2: " + r2 + "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
