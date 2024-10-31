@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() 이미지 교체</title>
+    <script src="../jQuery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                $("#image").attr("src", "./sec02/cat2.jpg"); // ID를 올바르게 수정
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <img id="image" src="./sec02/cat1.jpg">   
+    </p>
+    <button id="btn">이미지 교체</button> 
+</body>
+</html>

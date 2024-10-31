@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() 속성값을 가져오는 메소드</title>
+    <script src="../jQuery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn").click(function() {
+                var url = $("#naver").attr("href"); 
+                alert(url);
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <a id="naver" href="https://www.naver.com/">네이버로 이동하기</a>    
+    </p>
+    <button id="btn">href 값 얻기</button> 
+</body>
+</html>

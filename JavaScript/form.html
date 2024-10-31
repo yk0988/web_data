@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <컨트롤 알트 방향키 한번에 여러개 블록가능> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="../jQuery/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $(":text, :password").css({
+            "border": "solid 1px blue",
+ 
+        });
+    
+        $(":button").css({
+            "background-color": "blue",
+            "border": "solid 1px black",
+            "color":"white",
+        });
+    
+        $(":submit, :reset").css({
+            "background-color": "blue",
+            "color":"white",
+            "border": "solid 1px black",
+    
+        });
+    
+        $(":radio, :checkbox").wrap
+        ( "<span style='background-color:none;'></span>");
+        $("input:checked").wrap
+        ( "<span style='background-color:none;'></span>");
+        $("option:selected").css("background-color", "pink");
+    });
+    </script>
+    <style>
+
+      ul {
+            list-style-type: none; 
+            padding: 0; 
+        }
+     
+     li { margin-bottom: 10px; }
+
+
+     table {
+            border: none; 
+            border-collapse: collapse; 
+        }
+
+
+        th, td {
+            border: none;  
+            padding: 8px;  
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+    
+        <h2>회원 가입 양식</h2>
+        <ul>
+        <li>
+            아이디: <input type="text">
+            <input type="button" value="아이디 중복체크">
+        </li>
+
+        <li>
+            비밀번호: <input type="text">
+            <select>
+                <option value="naver">naver.com</option>
+                <option value="daum" selected>daum.net</option>
+                <option value="gmail">gmail.com</option>
+            </select>
+        </li>
+        
+        <li>
+            성별:<input type="radio" name="gender">
+            남성<input type="radio" name="gender" checked>여성
+        </li>
+
+        <li>
+            가입경로:<input type="checkbox" name="h1" checked>인터넷
+            <input type="checkbox" name="h2">친구
+            <input type="checkbox" name="h3"checked>기타
+      </li>
+
+    </ul>
+        <div>
+            <input type="submit" value="제출하기" >
+            <input type="reset" value="입력취소" >
+        </div>
+
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드효과</title>
+    <script src="../jQuery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+            $("p").slideDown();
+        });
+
+            $("#btn2").click(function(){
+            $("p").slideUp();
+        });
+
+    });
+    </script>
+</head>
+<body>
+    <button id="btn1">slideDown()</button>
+    <button id="btn2">slideUp()</button>
+
+    <p style="background-color: rgb(0, 90, 226);">
+        인내가 세상을 정복한다<br>
+        인내가 세상을 정복한다<br>
+        인내가 세상을 정복한다<br>
+        인내가 세상을 정복한다<br>
+    </p>
+</body>
+</html>

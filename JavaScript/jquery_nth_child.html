@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth_child</title>
+    <script src="../jQuery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("li:nth-child(2)").css("background-color", "yellow");
+            $("li:eq(2)").css("border", "solid 2px red");
+        });
+    </script>
+    <style>
+        ul { border: solid 1px blue; }
+    </style>
+</head>
+<body>
+    <h2>nth_child(n) 필터</h2>
+    <ul>
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+    </ul>
+
+    <ul>
+        <li>항목1</li>
+        <li>항목2</li>
+        <li>항목3</li>
+    </ul>
+</body>
+</html>

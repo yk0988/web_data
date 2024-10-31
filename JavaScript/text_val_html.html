@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text_val_html</title>
+    <script src="./jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn1").click(function() {
+                let content = $("#box").text(); 
+                alert(content); // 텍스트 내용 알림
+            });
+
+            $("#btn2").click(function() {
+                let content = $("#box").html(); 
+                alert(content); // HTML 내용 알림
+            });
+
+                 $("#btn").click(function() {
+                let content = $("#name").val(); 
+                alert(content); // 입력내용 가져오기
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h3>요소내용 가져오기</h3>
+        <p>text()는 요소의 텍스트만 가져오고 .html()은 태그도 같이 가져옵니다.</p>
+    </div>
+
+    <button id="btn1">텍스트 가져오기</button>
+    <button id="btn2">HTML 가져오기</button>
+
+    <p>
+        이름:<input type="text"id="name">
+    </p>
+    <button id="btn">입력내용 가져오기</button>
+
+</body>
+</html>
+
+</html>
