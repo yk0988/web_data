@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 탭 클릭 시 이벤트
+            $('#tab_title ul li').click(function() {
+                var num = $(this).index(); // 클릭된 탭의 인덱스
+                $('#tab_title ul li').removeClass('active'); // 모든 탭의 'active' 클래스 제거
+                $(this).addClass('active'); // 클릭된 탭에 'active' 클래스 추가
+
+                // 탭 콘텐츠 전환
+                $('#tab_content ul li').each(function() {
+                    if (num == $(this).index()) {
+                        $('#tab_content ul li').hide(); // 모든 탭 콘텐츠 숨기기
+                        $(this).fadeIn(); // 클릭된 콘텐츠만 표시
+                    }
+                });
+            });
+
+            // 페이지 로드 시 첫 번째 탭 내용만 보여주기
+            $('#tab_content ul li').hide(); // 모든 탭 콘텐츠 숨기기
+            $('#tab_content ul li:first').show(); // 첫 번째 탭 콘텐츠만 표시
+
+            // 하위 메뉴 토글 (마우스를 올리면 펼쳐짐, 떼면 접힘)
+            $('#tab_title ul li').hover(function() {
+                $(this).find('ul').stop(true, true).slideDown(200);  // 하위 메뉴 펼쳐짐
+            }, function() {
+                $(this).find('ul').stop(true, true).slideUp(200);  // 하위 메뉴 접힘
+            });
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TabMenu</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        li { list-style: none; }
+
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+        }
+
+        #wrap {
+           
+            width: 100%;
+            padding: 100px 0;        }
+
+        #tab_menu {
+            
+            width: 1000px;
+            height: 400px;
+            background-color: #333;
+        
+            margin: 0 auto;
+        }
+
+        #tab_title {
+            
+            width: 176px; /* 탭의 너비 */
+            height: 354px; /* 탭의 전체 높이 */
+            float: left; /* 왼쪽에 고정 */
+            position: relative; /* z-index가 적용될 수 있도록 position 설정 */
+            z-index: 10; /* 아코디언 메뉴가 앞에 나오도록 z-index 추가 */
+        }
+
+        #tab_title ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        #tab_title ul li {
+            width: 175px;
+            height: 43.9px;
+            border-bottom: 1px solid #666; /* 아래쪽에 경계선 추가 */
+            background-color: #333;
+            color: #fff;
+            line-height: 44px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #tab_title ul li:last-child {
+            border: none;
+        }
+
+        #tab_title ul li:hover {
+            background-color: #666;
+        }
+
+        #tab_title ul li.active {
+            background-color: #36F;
+        }
+
+        /* 하위 메뉴 스타일 */
+        #tab_title ul li ul {
+            display: none; /* 기본적으로 하위 메뉴는 숨김 */
+            position: absolute;
+            left: 176px; /* 상위 메뉴 옆에 배치 */
+            top: 0;
+            background-color: #444;
+            width: 176px;
+            z-index: 20; /* 하위 메뉴가 상위 메뉴보다 앞에 보이도록 z-index 추가 */
+        }
+
+        #tab_title ul li ul li {
+            height: 40px; /* 하위 메뉴 항목 높이 */
+            background-color: #555;
+            line-height: 40px;
+            padding-left: 10px;
+        }
+
+        #tab_content {
+            width: 825px; /* 나머지 콘텐츠 영역 */
+            height: 307px;
+            line-height: 300px;
+            text-align: center;
+            background-color: #F6C;
+            margin-left: 175px; /* 탭이 배치된 공간만큼 여백 추가 */
+            position: relative;
+            z-index: 1; /* 탭보다 뒤에 배치되도록 z-index 설정 */
+        }
+
+        #tab_content ul li {
+            width: 825px; /* 콘텐츠 영역 너비 */
+            height: 307px;
+            background-color: #36F;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .familysite {
+            margin-top: 30px;
+            position:absolute;
+            margin-left: 25px;
+        }
+
+        .familysite select {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="tab_menu">
+        <div id="tab_title">
+            <ul>
+                <li>java
+                    <ul>
+                        <li>java sub 1</li>
+                        <li>java sub 2</li>
+                    </ul>
+                </li>
+                <li>JavaScript
+                    <ul>
+                        <li>JavaScript sub 1</li>
+                        <li>JavaScript sub 2</li>
+                    </ul>
+                </li>
+                <li>jQuery
+                    <ul>
+                        <li>jQuery sub 1</li>
+                        <li>jQuery sub 2</li>
+                    </ul>
+                </li>
+                <li>html
+                    <ul>
+                        <li>html sub 1</li>
+                        <li>html sub 2</li>
+                    </ul>
+                </li>
+                <li>oracle
+                    <ul>
+                        <li>oracle sub 1</li>
+                        <li>oracle sub 2</li>
+                    </ul>
+                </li>
+              
+                </li>
+            </ul>
+        </div>
+        
+        <div id="tab_content">
+            <ul>
+                <li>java content</li>
+                <li>JavaScript content</li>
+                <li>jQuery content</li>
+                <li>html content</li>
+                <li>oracle content</li>
+                <li>oracle content 2</li>
+            </ul>
+        </div>
+
+        <div class="familysite">
+            <select name="sitelist">
+                <option value="#">Study site 1</option>
+                <option value="#">Study site 2</option>
+                <option value="#">Study site 3</option>
+            </select>
+        </div>
+    </div>
+</div>
+</body>
+</html>
