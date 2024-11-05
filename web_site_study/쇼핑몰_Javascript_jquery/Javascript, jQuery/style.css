@@ -1,0 +1,126 @@
+@charset "UTF-8";
+#wrap{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+header{
+    margin: 30px 0;
+    color:#3f3f3f;
+}
+
+
+/*테이블 경계*/
+section>table{
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+/*테이블 라인/배치*/
+td{
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+
+/*메인 큰 이미지(screen)사이즈*/
+#screen{
+    width: 647px;
+    height: 325px;
+}
+
+#screen>img{
+	display: block;
+}
+
+/*섬네일*/
+td.thmb{
+	width: 95px;
+	height: 95px;
+}
+
+/*블록 안에 있는 내용이 
+지정된 사이즈를 넘어가면 숨기기*/
+td.thmb>a{
+	display: block;
+	position: relative;
+	width: 95px;
+	height: 95px;
+	overflow: hidden;
+	background-image: url(./images/th1.png);
+}
+
+td.thmb>a>img{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+td.thmb>a:hover>img,
+td.on>a>img{
+	top: -95px;
+}
+
+tr:last-child>td>div>a{
+	text-indent: -9999px;
+}
+
+/* <하단 페이지> */
+.prev{
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+	border-color: transparent #cccccc ;
+	border-left: none;
+	content: '';
+}
+
+
+.prev>a{
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 20px;
+	left: 0px;
+	top: -10px;
+}
+.next{
+	position: relative;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 10px;
+	border-width: 10px;
+	border-style: solid;
+	border-color: transparent  #cccccc;
+	border-right: none;
+	content: '';
+}
+.next>a{
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 20px;
+	left: -10px;
+	top: -10px;
+}
+
+
+/* <하단 페이지 마우스 오버시 색상변경> */
+.prev:hover{
+	border-color:transparent red transparent transparent;
+}
+.next:hover{
+	border-color: transparent transparent transparent red;
+}
+
+
+/* <이름생성> */
+.myname{
+    margin: 30px 0;
+    color:#3f3f3f;
+    font-size: 18px;
+    font-weight: bold;
+}
