@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+/*--------------------------------------*/
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-family: "맑은고딕";
+    color: #333333;
+}
+
+html, body {
+    min-width: 1200px;
+    background-color: beige;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+/*--------------------------------------*/
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #818181;
+}
+
+.wrap {
+    width: 1200px;
+}
+
+/*--------------------------------------*/
+
+.imgslide {
+    width: 1200px;
+    height: 300px;
+}
+
+/*--------------------------------------*/
+
+.content {
+    width: 1200px;
+    height: 200px;
+}
+.notice {
+    float: left;
+    width: 400px;
+    min-height: 170px; /* 높이를 최소값으로 설정 */
+    padding-bottom: 20px; /* 내용이 넘칠 경우 여백 추가 */
+    /* background-color: #aaaaaa; */
+}
+
+.tab {
+    float: left;
+    width: 400px;
+    height: 40px;
+    /* background-color: #919191; */
+    padding-top: 15px;    /* 상단으로 5px 여백 추가 */
+}
+
+.navi h4 {
+    float: left;
+    height: 50px;
+    line-height: 50px;
+}
+
+.notice > div {
+    float: left;
+    width: 380px;
+    border-bottom: 1px solid #333;
+    margin-left: 10px;
+}
+
+.notice ul {
+    float: left;
+    width: 400px;
+}
+
+.notice li {
+    height: 32px;
+    line-height: 32px;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.notice li span {
+    float: right;
+}
+
+.notice li:nth-child(2) {
+    border-top: 1px solid #333; /* 상단에 1px 두께의 실선 */
+    border-bottom: 1px solid #333; /* 하단에 1px 두께의 실선 */
+    padding: 0px; /* 줄과 내용 사이에 여백 추가 */
+}
+
+.notice li:hover {
+    font-weight: bold; /* 올바르게 수정 */
+}
+
+/*--------------------------------------*/
+
+
+
+.gallery {
+    float: left;
+    width: 400px;
+    height: 200px;
+}
+
+
+.gallery h4{
+    float: left;
+    width: 50px;
+   line-height: 50px;
+   margin-top: -5px; 
+}
+
+.gallery>div {
+    margin-top: -10px; 
+    width: 380px;
+    /* border-bottom: 1px solid #3333; */
+    margin-left: 10px;
+}
+
+.gallery ul li {
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+.gallery img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.gallery li:hover{
+    opacity: 0.5;
+}
+
+.gallery li span {
+    display: block; /* 텍스트를 이미지 아래로 배치 */
+    margin-top: -10px;  /* 이미지와 텍스트 사이에 간격 추가 */
+    font-size: 14px;  /* 텍스트 크기 설정 */
+    color: #333;  /* 텍스트 색상 */
+    text-align: center;
+}
+
+
+/*--------------------------------------*/
+
+
+.shortcut {
+    float: right;
+    width: 400px;
+    height: 200px;
+}
+
+.shortcut img{
+    float: right;
+    width: 400px;
+    height: 180px;
+    margin-left: 110px;
+    margin-top: 10px;
+}
+
+.sctext{
+    float: right;
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    color:#ffffff;
+    font-weight: bold;
+    line-height: 30px;
+    background-color: #4e4e4e;
+    margin-top: 80px;
+    margin-left: 50px;
+}
+
+
+.sctext{
+    opacity: 0.5;
+}
+/*--------------------------------------*/
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(107, 107, 107);
+    clear: both; /* 플로트 정리 */
+}
+
+/* .copy 영역 */
+.copy{
+	float:left;
+	width:550px;  /* Copyright 너비 */
+	height:100px;  /* Copyright 높이 */
+    text-align:center;
+    font-size:20px;
+    line-height:100px;
+    background-color: #9eefff;
+}
+
+/* .site 영역 */
+.site{            /* sns와 familysite묶어줌 */
+	float:right;
+	width:400px;  /* sns와 패일리 사이트 들어가는 곳 너비*/
+	height:100px; /* sns와 패일리 사이트 들어가는 곳 높이*/
+}	
+.sns{
+	float:right;
+	width:400px;  /*하단 메뉴 너비*/
+	height:50px;  /*하단 메뉴 높이*/
+}
+.sns ul{ 
+	float:right;       
+	margin-right:20px;
+	margin-top:10px;
+}
+.sns li{        
+    display:inline-block;
+}
+.sns img{      
+	height:40px;
+	width:40x;
+	padding:10px;
+}
+.sns img:hover{
+	opacity:0.5;
+}
+.familysite{
+	width:400px;  /* 패밀리 사이트 너비 */	
+	height:50px;  /* 패밀리 사이트 높이(site 높이의 1/2) */
+}
+.familysite select{
+	float:right;
+	height:20px;
+	width:200px;
+	margin-right:20px;
+	margin-top:15px;
+	font-size:14px;
+}
+
+
+/*--------------------------------------*/
+
+.logo {
+    float: left;
+    width: 250px;
+    height: 100px;
+}
+
+
+.logo img{
+    float: left;
+    width: 200px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+
+
+#menu_bg{
+    width: 1200px;
+    height: 160px;
+    position: absolute;
+    display: none;
+    z-index: 2;
+    top: 100px;
+    background-color: #bbbbbb;
+}
+
+.menu {
+    float: right;
+    width: 800px;
+    height: 100px;
+    z-index: 1;
+}
+
+.navi {
+    float: right;
+    margin-top: 50px;
+    margin-right: 0px;
+}
+
+.navi > li {
+    float: left;
+}
+
+.navi > li > a {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+
+.navi > li > a:hover {
+    background-color: #bbbbbb;  /* 마우스를 올리면 배경색 변경 */
+}
+
+.submenu{
+    width: 200px;
+    height: 160px;
+    position: absolute;
+    display: none;
+    z-index: 3;
+    background-color:  #bbbbbb;
+
+}
+
+
+.submenu>li>a{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #bbbbbb;
+    color: #ffffff;
+}
+
+.submenu>li>a:hover{
+background-color: #9eefff;
+color:#333333; 
+}
+
+
+.imgslide{
+    width: 1200px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.imgslide>a{
+    position: absolute;
+    display: block;
+}
+
+
+
+.imgslide span{
+    width: 300px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    left: 40%;
+    top: 40%;
+    position: absolute;
+    background-color:  #bbbbbb;
+
+}
